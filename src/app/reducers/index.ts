@@ -20,8 +20,17 @@ const selectCounterBranch = (state: AppState) => state.counter;
 
 // 4) Write a selector for the components
 
-// TODO: We need a selectorFunction that returns the current count
 export const selectGetCurrent = createSelector(
   selectCounterBranch,
   b => b.current
+);
+
+export const selectResetDisabled = createSelector(
+  selectGetCurrent,
+  c => c === fromCounter.initialState.current
+);
+
+export const selectCountingBy = createSelector(
+  selectCounterBranch,
+  b => b.by
 );

@@ -13,6 +13,9 @@ import { CounterComponent } from './components/counter/counter.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from './reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { CounterEffects } from './effects/counter.effects';
+import { MusicModule } from './features/music/music.module';
 
 @NgModule({
   declarations: [
@@ -27,8 +30,10 @@ import { reducers } from './reducers';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MusicModule,
     StoreModule.forRoot(reducers),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument(),
+    EffectsModule.forRoot([CounterEffects])
   ],
   providers: [TodoDataService],
   bootstrap: [AppComponent]

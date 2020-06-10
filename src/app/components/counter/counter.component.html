@@ -5,5 +5,23 @@
         (click)="increment()">+</button>
 <div>
   <button class="btn btn-med btn-primary"
+          [disabled]="resetDisabled$ | async"
           (click)="reset()">RESET</button>
+</div>
+
+<div class="btn-group"
+     role="group"
+     aria-label="Basic example">
+  <button type="button"
+          [disabled]="(countingBy$ | async) === 1"
+          (click)="setCountBy(1)"
+          class="btn btn-secondary">Count By 1</button>
+  <button type="button"
+          [disabled]="(countingBy$ | async) === 3"
+          (click)="setCountBy(3)"
+          class="btn btn-secondary">Count By 3</button>
+  <button type="button"
+          [disabled]="(countingBy$ | async) === 5"
+          (click)="setCountBy(5)"
+          class="btn btn-secondary">Count By 5</button>
 </div>
