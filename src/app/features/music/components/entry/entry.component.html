@@ -1,7 +1,9 @@
-<form [formGroup]="songForm"
+<form class="form-inline"
+      [formGroup]="songForm"
       (ngSubmit)="submit(focusMe)">
-  <div class="form-group">
-    <label for="title">Title</label>
+  <div class="form-group col-md-12 form-inline">
+    <label class="col-sm-2"
+           for="title">Title</label>
     <input name="title"
            #focusMe
            formControlName="title"
@@ -16,8 +18,9 @@
       </div>
     </div>
   </div>
-  <div class="form-group">
-    <label for="artist">Artist</label>
+  <div class="form-group col-md-12 form-inline">
+    <label class="col-sm-2"
+           for="artist">Artist</label>
     <input name="artist"
            formControlName="artist"
            class="form-control">
@@ -31,8 +34,9 @@
       </div>
     </div>
   </div>
-  <div class="form-group">
-    <label for="album">Album</label>
+  <div class="form-group col-md-12 form-inline">
+    <label class="col-sm-2"
+           for="album">Album</label>
     <input name="album"
            formControlName="album"
            class="form-control">
